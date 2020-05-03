@@ -1,0 +1,8 @@
+#1 오늘의 한줄
+
+ This version of Android Studio cannot open this project, please retry with Android Studio ~ or newer
+ 
+ -> project build gradle에 가서 그래들 버젼을 고쳐준다
+ 
+ 
+ 
