@@ -1,5 +1,7 @@
-# 2020-07-07
+# 2020-06-07
 
+* SHOW DATABASES          -> 데이터베이스들을 
+* CREATE DATABASE DB명    -> 데이터베이스 생성
 * USE [DB명]             -> 해당 DB를 사용함
 * SHOW TABLES  	         -> 해당 DB 테이블 조회 
 * CREATE TABLE `테이블명`   -> 테이블 생성
