@@ -18,6 +18,7 @@
 
 # 2020-06-08
 
-*  Error ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
-   -> 해결방법 mysql installer > server 옆에 reconfigure > Auth 설정가서 legacy 선택 > 완료 
+``Error ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client``
+
+- 해결방법 mysql installer > server 옆에 reconfigure > Auth 설정가서 legacy 선택 > 완료
 
