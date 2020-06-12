@@ -43,16 +43,18 @@ println(sortedValues)
 
 ### 1.  equals , ' == '
 
-<JAVA>
+- JAVA
 
-equals는 Call by Value 즉, 값을 참조해서 비교하겠다 라는뜻이고
+  - equals는 Call by Value 즉, 값을 참조해서 비교
 
-'' == ' 은 Call by Reference 주소를 참조한다 라는 뜻이다. 
+  - '' == ' 은 Call by Reference 주소를 참조 
 
-그래서 문자열의 값을 비교 시 equals 를 하는것이 맞다
+    > 문자열의 값을 비교 시 equals 를 하는것이 맞다
+    >
+    > 
 
-<Kotlin>
+- Kotlin
 
-코틀린은 == 사용시 equals 를 내부적으로 호출한다.  굿
+  - 코틀린은 == 사용시 equals 를 내부적으로 호출한다.  굿
 
-코틀린에서 주소값을 참조할 때는 ===를 사용하면 된다.
+  - 코틀린에서 주소값을 참조할 때는 ===를 사용하면 된다.
