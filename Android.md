@@ -160,10 +160,10 @@ supportActionBar?.setDisplayShowTitleEnabled(false)
   android:name="androidx.navigation.fragment.NavHostFragment"
   ```
 
-  `
+ 
 
   어플리케이션을 위해 구현된 어플리케이션 서브클래스의 이름. 
 
   어플리케이션 프로세스가 시작될 때, 어플리케이션의 다른 어떤 컴포넌트보다 먼저 객체화된다(실행된다). 서브클래스는 없어도 된다(대부분의 어플리케이션은 서브클래스를 사용하지 않는다). 서브클래스가 없으면, 안드로이드는 베이스 어플리케이션 클래스의 객체를 사용한다.
 
-  `
+  
