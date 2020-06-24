@@ -58,3 +58,78 @@ println(sortedValues)
   - 코틀린은 == 사용시 equals 를 내부적으로 호출한다.  굿
 
   - 코틀린에서 주소값을 참조할 때는 ===를 사용하면 된다.
+  
+  
+
+
+
+# 2020.06.24
+
+## - String 
+
+- split
+
+```kotlin
+fun [CharSequence]().split(
+  vararg **delimiters**: String,
+  **ignoreCase**: Boolean = false,
+  **limit**: Int = 0
+): [List]
+```
+
+문자열을 delimiters 를 기준, List형태로 나눠주고 반환한다.
+
+
+
+- replace
+
+```kotlin
+fun [CharSequence]().replace(
+  oldValue: Char, newValue: Char
+): String
+```
+
+문자열 내에 oldValue를 newValue로 바꾼 String을 반환한다.
+
+
+
+- contains
+
+```kotlin
+operator fun CharSequence.contains(
+    other: CharSequence,
+    ignoreCase: Boolean = false
+): Boolean
+```
+
+문자열에서 other을 포함하고 있는지를 리턴해준다.
+
+
+
+- reserved
+
+```kotlin
+fun CharSequence.reversed(): CharSequence
+```
+
+문자열을 거꾸로한 문자열을 반환한다.
+
+
+
+- substring
+
+```kotlin
+fun String.substring(range: IntRange): String
+```
+
+문자열에서  range에 해당하는 문자 반환 (배열처럼 0부터) 
+
+
+
+- last
+
+```kotlin
+fun CharSequence.last(): Char
+```
+
+문자열에서 가장 마지막 문자를 반환한다.
