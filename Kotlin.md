@@ -67,7 +67,7 @@ println(sortedValues)
 
 ## - String 
 
-- split
+- split - *문자열을 delimiters 를 기준, List형태로 나눠주고 반환한다.*
 
 ```kotlin
 fun [CharSequence]().split(
@@ -77,11 +77,9 @@ fun [CharSequence]().split(
 ): [List]
 ```
 
-문자열을 delimiters 를 기준, List형태로 나눠주고 반환한다.
 
 
-
-- replace
+- replace - *문자열 내에 oldValue를 newValue로 바꾼 String을 반환한다.*
 
 ```kotlin
 fun [CharSequence]().replace(
@@ -89,11 +87,9 @@ fun [CharSequence]().replace(
 ): String
 ```
 
-문자열 내에 oldValue를 newValue로 바꾼 String을 반환한다.
 
 
-
-- contains
+- contains - *문자열에서 other을 포함하고 있는지를 리턴해준다.*
 
 ```kotlin
 operator fun CharSequence.contains(
@@ -102,34 +98,26 @@ operator fun CharSequence.contains(
 ): Boolean
 ```
 
-문자열에서 other을 포함하고 있는지를 리턴해준다.
 
 
-
-- reserved
+- reserved - *문자열을 거꾸로한 문자열을 반환한다.*
 
 ```kotlin
 fun CharSequence.reversed(): CharSequence
 ```
 
-문자열을 거꾸로한 문자열을 반환한다.
 
 
-
-- substring
+- substring - *문자열에서  range에 해당하는 문자 반환 (배열처럼 0부터)* 
 
 ```kotlin
 fun String.substring(range: IntRange): String
 ```
 
-문자열에서  range에 해당하는 문자 반환 (배열처럼 0부터) 
 
 
-
-- last
+- last - *문자열에서 가장 마지막 문자를 반환한다.*
 
 ```kotlin
 fun CharSequence.last(): Char
 ```
-
-문자열에서 가장 마지막 문자를 반환한다.
