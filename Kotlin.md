@@ -154,7 +154,16 @@ fun abs(x: Float): Float
 ```
 
 
+## - IntArray, CharArray, LongArray ...
 
+- 위의 타입 배열들은 짜증나게도 미리 구역을 할당해주지 않으면 boundException이 뜨게 된다
 
+```kotlin
+var answer = Array(arr1.size){IntArray(arr1[0].size)}
+```
+
+-> 2차원 배열을 미리 선언한것이다
+
+-> 프로그래머스 문제는 IntArray 타입으로 나와있어 이렇게 해주는것에 익숙해지는것이 중요
 
 
