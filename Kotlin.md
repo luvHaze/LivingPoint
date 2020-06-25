@@ -121,3 +121,40 @@ fun String.substring(range: IntRange): String
 ```kotlin
 fun CharSequence.last(): Char
 ```
+
+# 2020. 06. 25
+
+## - 코틀린 Type 표현방식
+
+- `Int` : `123`으로 표현
+- `Long` : `123L`으로 표현
+- `Double` : `123.5`로 표현
+- `Float` : `123.0F` 또는 `123.0f`으로 표현
+
+
+
+##  - kotlin.math
+
+- sqrt - *x 의 가장 가깝거나 해당하는 제곱근을 구해준다.* 
+
+```kotlin
+fun sqrt(x: Double): Double
+fun sqrt(x: Float): Float
+```
+
+`몰라서 개고생 했다.`
+
+
+
+- abs - x의 절대값을 반환해준다.
+
+```kotlin
+fun abs(x: Double): Double
+fun abs(x: Float): Float
+```
+
+
+
+
+
+
