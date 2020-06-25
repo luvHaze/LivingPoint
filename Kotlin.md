@@ -133,7 +133,7 @@ fun CharSequence.last(): Char
 
 
 
-##  - kotlin.math
+##  - Math
 
 - sqrt - *x 의 가장 가깝거나 해당하는 제곱근을 구해준다.* 
 
