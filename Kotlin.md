@@ -167,3 +167,15 @@ var answer = Array(arr1.size){IntArray(arr1[0].size)}
 -> 프로그래머스 문제는 IntArray 타입으로 나와있어 이렇게 해주는것에 익숙해지는것이 중요
 
 
+
+# 2020. 06. 29
+
+
+
+- 소수점 자르기 - *String.format을 사용해서 소수점을 잘라서 표현해준다*
+
+```kotlin
+println(String.format("%.2f",e))
+```
+
+
