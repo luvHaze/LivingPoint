@@ -178,4 +178,36 @@ var answer = Array(arr1.size){IntArray(arr1[0].size)}
 println(String.format("%.2f",e))
 ```
 
+# 2020. 07. 01
 
+### - Queue
+
+- 큐는 삽입과 삭제에 용이하다, Head가 삭제가 되면 자동적으로 다음값이 Head로  온다.
+
+```kotlin
+import java.util.*   // 임포트 해야 사용할수 있다
+
+var queue: Queue<T> = LinkedList<T>()
+```
+
+- add(elelment: E)
+
+  큐에 값을 추가한다
+
+- element()
+
+  큐에 Head를 제거하지 않고 어떤값이 있는지 알려준다. (큐가 비어있을땐 오류를 발생시킨다)
+
+- **peek()**
+
+  element()와 동일한 기능이지만 **큐가 비어있을때 null값을 리턴해준다.**
+
+- **poll()**
+
+  가장 주된 기능 큐에서 Head에 존재하는 값을 반환하고 큐에서 제거한다.
+
+  Head가 제거되면 다음값이 Head로 오게된다. ( **큐가 비어있을땐 null을 리턴해준다.**) 
+
+- remove()
+
+  poll()과 같은 기능이지만 **큐가 비어있더라도 null을 출력해주지 않는다.**
