@@ -168,7 +168,7 @@ supportActionBar?.setDisplayShowTitleEnabled(false)
 
   
   
-  # 2020.07.06
+# 2020.07.06
 
 ### 	상태바 색상변경
 
