@@ -167,3 +167,28 @@ supportActionBar?.setDisplayShowTitleEnabled(false)
   어플리케이션 프로세스가 시작될 때, 어플리케이션의 다른 어떤 컴포넌트보다 먼저 객체화된다(실행된다). 서브클래스는 없어도 된다(대부분의 어플리케이션은 서브클래스를 사용하지 않는다). 서브클래스가 없으면, 안드로이드는 베이스 어플리케이션 클래스의 객체를 사용한다.
 
   
+  
+  # 2020.07.06
+
+### 	상태바 색상변경
+
+- ```xml
+  <item name="colorPrimaryDark">#ffffff</item>
+  <item name="android:windowLightStatusBar">true</item>
+  ```
+
+  - colorPrimaryDark  : 작업표시줄(상태창)의 색상 변경해준다.
+  - windowLightStatusBar : 상태창의 색깔이 바뀌어도 자동으로 아이콘의 색상을 변경해준다.
+
+
+
+
+
+		###     위치서비스 (GPS)
+
+- 위치서비스 접근권한 부여 (checkSelfPermission, requestPermissions)
+- 기기의 위치 서비스 활성화
+  1. LocationManager (getSystemService 사용) 객체생성
+  2. 만든 객체의 getLastKnownLocation으로 위치값을 받는다
+- 받아온 위도와 경도를 토대로 GeoCoder의 getFromLocation을 이용해 현재 주소지를 받는다.
+  - 이 때 Address 클래스 타입으로 반환된다.
