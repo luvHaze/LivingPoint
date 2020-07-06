@@ -184,7 +184,7 @@ supportActionBar?.setDisplayShowTitleEnabled(false)
 
 
 
-		###     위치서비스 (GPS)
+ ###     위치서비스 (GPS)
 
 - 위치서비스 접근권한 부여 (checkSelfPermission, requestPermissions)
 - 기기의 위치 서비스 활성화
