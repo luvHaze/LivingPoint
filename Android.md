@@ -193,7 +193,10 @@ supportActionBar?.setDisplayShowTitleEnabled(false)
 - 받아온 위도와 경도를 토대로 GeoCoder의 getFromLocation을 이용해 현재 주소지를 받는다.
   - 이 때 Address 클래스 타입으로 반환된다.
   
-  # 2020. 07. 12
+  
+  
+  
+# 2020. 07. 12
 
 ### Static (Companion Object)
 
