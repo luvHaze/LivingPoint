@@ -192,3 +192,44 @@ supportActionBar?.setDisplayShowTitleEnabled(false)
   2. 만든 객체의 getLastKnownLocation으로 위치값을 받는다
 - 받아온 위도와 경도를 토대로 GeoCoder의 getFromLocation을 이용해 현재 주소지를 받는다.
   - 이 때 Address 클래스 타입으로 반환된다.
+  
+  # 2020. 07. 12
+
+### Static (Companion Object)
+
+- 코틀린에서 함수를 Static 해줄경우 @JvaStatic을 붙여주어야 한다.
+
+```kotlin
+ companion object {
+        @BindingAdapter("imageSrc")
+        @JvmStatic fun loadImageURL(view: ImageView, url: String){
+            Glide.with(view.context).load(url).into(view)
+        }
+
+```
+
+ 
+
+### BindingAdapter
+
+- XML에서 속성명으로 데이터 바인딩을 하는 경우에 사용
+
+```xml
+<ImageView
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   imageSrc="@{userProfile.imageURL}"/>
+            
+```
+
+```kotlin
+ companion object {
+        @BindingAdapter("imageSrc")
+        @JvmStatic fun loadImageURL(view: ImageView, url: String){
+            Glide.with(view.context).load(url).into(view)
+        }
+```
+
+-> ImageIvew의 imageSrc라는 바인딩 속성을 만들고
+
+-> 어댑터를 하나 생성해 Static  함수로 URL값을 어떻게 처리해줄지 구현해준다.
