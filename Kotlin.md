@@ -215,17 +215,5 @@ var queue: Queue<T> = LinkedList<T>()
   
   
   
-  # 2020. 07. 16
-
-### - Exception from call site #4 bootstrap method
-
-​	자바 버전을 올려주면 해결이 가능하다.
-
-```
-compileOptions {
-targetCompatibility = "8"
-sourceCompatibility = "8"
-}
-```
 
 
