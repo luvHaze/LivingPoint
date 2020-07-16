@@ -236,3 +236,20 @@ supportActionBar?.setDisplayShowTitleEnabled(false)
 -> ImageIvew의 imageSrc라는 바인딩 속성을 만들고
 
 -> 어댑터를 하나 생성해 Static  함수로 URL값을 어떻게 처리해줄지 구현해준다.
+
+
+
+
+  # 2020. 07. 16
+
+### - Exception from call site #4 bootstrap method
+
+​	자바 버전을 올려주면 해결이 가능하다.
+
+```
+compileOptions {
+targetCompatibility = "8"
+sourceCompatibility = "8"
+}
+```
+
