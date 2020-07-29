@@ -253,3 +253,17 @@ sourceCompatibility = "8"
 }
 ```
 
+# 2020. 07. 29
+
+#### [ERROR] CLEARTEXT communication to x.x.x not permitted by network security policy
+
+application에 해당 문구를 작성해준다.
+
+```
+android:usesCleartextTraffic="true"
+```
+
+**-> API 27까지는 http 통신을 기본 허용했지만 API28부터는** 
+
+​	**아래 문장을 추가해주거나 https 로 해야한다.**
+
