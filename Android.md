@@ -267,3 +267,25 @@ android:usesCleartextTraffic="true"
 
 ​	**아래 문장을 추가해주거나 https 로 해야한다.**
 
+
+# 2020-07-30
+
+## BottomNav + NavGraph 사용시
+
+```xml
+	<item android:id="@+id/fragment_Dogdrip"
+        android:title="Daily"
+        android:icon="@drawable/cube" />
+
+    <item android:id="@+id/dailyFragment2"
+        android:title="Wrtie"
+        android:checkable="true"/>
+
+    <item android:id="@+id/myFragment"
+        android:title="MY"
+        android:icon="@drawable/cube"/>
+```
+
+***BottomNav Menu XML에서 item들의 id를 띄우고 싶은 프래그먼트 id와 같게 해준다***
+
+
