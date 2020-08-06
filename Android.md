@@ -289,3 +289,29 @@ android:usesCleartextTraffic="true"
 ***BottomNav Menu XML에서 item들의 id를 띄우고 싶은 프래그먼트 id와 같게 해준다***
 
 
+
+# 2020. 07. 30
+
+### 이미지 뷰 이미지 속성
+
+```XML
+<ImageButton
+    android:id="@+id/btn_back"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:src="@drawable/btn_back"
+    android:scaleType="centerInside" //이 부분
+ />
+```
+
+- MATRIX = 원본 크기 그대로 보여줌 (왼쪽상단 정렬) 
+- CENTER = 원본 크기 그대로 보여줌 (가운데 정렬)
+- CENTER_CROP = View 영역에 공백이 있으면 채워서 보여줌(비율유지)
+- CENTER_INSIDE = View 영역을 벗어나면 맞춰서 보여줌(비율유지)
+- FIT_START = View 영역에 맞게 보여줌 (왼쪽상단 정렬, 비율유지)
+- FIT_CENTER = View 영역에 맞게 보여줌 (가운데 정렬, 비율유지)
+- FIT_END = View 영역에 맞게 보여줌 (왼쪽하단 정렬, 비율유지)
+- FIT_XY = View 영역을 가득 채워서 보여줌(비율유지 안함)
+
+
