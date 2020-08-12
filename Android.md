@@ -315,3 +315,72 @@ android:usesCleartextTraffic="true"
 - FIT_XY = View 영역을 가득 채워서 보여줌(비율유지 안함)
 
 
+# 2020. 08. 12
+
+## # Lifecycle
+
+<img src="https://user-images.githubusercontent.com/53253298/90026384-305fc300-dcf2-11ea-9c7e-20f266037ae3.png" alt="Lifecycle" style="zoom: 50%;" />
+
+ - 종류 
+
+    - onCreate
+       - 활동을 생성할때 가장먼저 실행된다.
+       - 실행이 된 다음엔 Created 상태가 된다.
+    - onStart
+       - Created 상태에서 활동이 시작될때 실행된다. (액티비티가 실행될 때)
+       - 실행이 된 다음엔 Started 상태가 된다.
+    - onResume
+       - 액티비티가 focus를 얻었을때 실행된다. (focus를 잃을때까진 Resumed 상태)
+       - ex) 다이얼로그 화면에서 확인을 눌러서 다시 액티비티 화면으로 됐을때
+       - 실행이 된 다음엔 Resumed 상태가 된다.
+    - onPause
+       - Resumed 상태에서 focus를 잃었을때 실행된다.
+       - ex) 다이얼로그를 띄워서 다이얼로그 화면이 뜰때
+    - onStop
+       - 액티비티 화면에서 벗어나면 실행된다.
+       - ex) 앱을 백그라운드에 숨겨놓을때 onStop이 실행됨
+    - onDestroy
+       - 액티비티가 소멸되기 전에 실행된다. (앱을 프로세스에서 종료)
+
+   
+
+## # LifecycleObserver
+
+- 라이프사이클을 옵저버 패턴으로 관리를 하는것이다.
+- 해당 옵저버 클래스는 항상 라이프사이클을 보고있다가 맞는주기에 알아서 실행되게끔 설정할 수 있다. 
+
+
+
+#### 1.  옵저버를 달아줄 클래스에 LifecyycleObserver 상속
+
+```kotlin
+class DessertTimer(lifecycle: Lifecycle): LifecycleObserver
+```
+
+
+
+#### 2. addObserver로 해당 클래스 옵저버로 등록한다.
+
+```kotlin
+lifecycle.addObserver(this)
+```
+
+
+
+#### 3. Annotation으로 어떤 주기에 어떤행동을 할지 설정한다.
+
+```kotlin
+@OnLifecycleEvent(Lifecycle.Event.ON_START)
+fun startTimer(){ ... }
+```
+
+
+
+#### 4. 액티비티에서는 해당클래스를 만들때 Lifecycle을 전달 해준다.
+
+```kotlin
+dessertTimer = DessertTimer(this.lifecycle)
+```
+
+
+ - 
