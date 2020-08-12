@@ -319,27 +319,27 @@ android:usesCleartextTraffic="true"
 
 ## # Lifecycle
 
-<img src="https://user-images.githubusercontent.com/53253298/90026384-305fc300-dcf2-11ea-9c7e-20f266037ae3.png" alt="Lifecycle" style="zoom: 50%;" />
+<img src="https://user-images.githubusercontent.com/53253298/90026384-305fc300-dcf2-11ea-9c7e-20f266037ae3.png" alt="Lifecycle" style="zoom: 33%;" />
 
  - 종류 
 
-    - onCreate
+    - **onCreate**
        - 활동을 생성할때 가장먼저 실행된다.
        - 실행이 된 다음엔 Created 상태가 된다.
-    - onStart
+    - **onStart**
        - Created 상태에서 활동이 시작될때 실행된다. (액티비티가 실행될 때)
        - 실행이 된 다음엔 Started 상태가 된다.
-    - onResume
+    - **onResume**
        - 액티비티가 focus를 얻었을때 실행된다. (focus를 잃을때까진 Resumed 상태)
        - ex) 다이얼로그 화면에서 확인을 눌러서 다시 액티비티 화면으로 됐을때
        - 실행이 된 다음엔 Resumed 상태가 된다.
-    - onPause
+    - **onPause**
        - Resumed 상태에서 focus를 잃었을때 실행된다.
        - ex) 다이얼로그를 띄워서 다이얼로그 화면이 뜰때
-    - onStop
+    - **onStop**
        - 액티비티 화면에서 벗어나면 실행된다.
        - ex) 앱을 백그라운드에 숨겨놓을때 onStop이 실행됨
-    - onDestroy
+    - **onDestroy**
        - 액티비티가 소멸되기 전에 실행된다. (앱을 프로세스에서 종료)
 
    
@@ -383,4 +383,3 @@ dessertTimer = DessertTimer(this.lifecycle)
 ```
 
 
- - 
