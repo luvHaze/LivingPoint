@@ -383,3 +383,36 @@ dessertTimer = DessertTimer(this.lifecycle)
 ```
 
 
+# 2020. 08. 14
+
+### 맥북을 처음으로 산 날 
+
+- 단축키
+
+  - cmd + / : 한줄 주석a
+
+  - cmd + f12 : 파일 구조 보기
+
+  - cmd + y : 정의된 부분 빠르게 보기
+
+  - cmd + d : 선택 블록을 복사하거나 해당 라인을 복사해준다.
+
+  - cmd + p : 해당 메소드의 사용을 위해 필요한 파라미터를 표시해줌.
+
+  - option + cmd + / : 블록 주석
+
+  - option cmd + L : 라인정리
+
+  - ctrl + O : Override methods
+
+  - ctrl + I : Implement methods
+
+  - ctrl + space : 기본 단어 자동 완성 ( 맥의 단축키랑 중복되어서 변경함 )
+
+  - shift + F6 : 이름 변경하기 ( 변수명 등 )
+
+  - shift + cmd + 위 또는 아래 : 해당 메서드 안에서의 라인 이동
+
+  - ctrl + shift + space : 타입 캐스팅( ex) Button button = (까지 입력하고 누르면 (Button)생성해줌)
+
+  - f3 : 북마크 (숫자나 문자로 북마크 = alt + f3, ctrl + 숫자 or 문자로 이동)
