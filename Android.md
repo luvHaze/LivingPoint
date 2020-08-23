@@ -416,3 +416,65 @@ dessertTimer = DessertTimer(this.lifecycle)
   - ctrl + shift + space : 타입 캐스팅( ex) Button button = (까지 입력하고 누르면 (Button)생성해줌)
 
   - f3 : 북마크 (숫자나 문자로 북마크 = alt + f3, ctrl + 숫자 or 문자로 이동)
+  
+  
+  
+# 2020. 08. 23
+
+### ViewModel 캡슐화
+
+- UI에서 라이브데이터가 변경되는것을 방지하고자 캡슐화를 한다.
+
+```kotlin
+private val _score = MutableLiveData<Int>() // 뷰모델 내부에서 사용
+    val score: LiveData<Int>				// 외부에서 사용 (변경불가)
+        get() { return _score }
+```
+
+변경이 불가능한 LiveData인 score는 외부에서 참조용으로만 사용한다.
+
+직접적인 값 변경은 ViewModel 내부에서 _score변수로 처리한다.
+
+
+
+### ViewModelFactory
+
+- ViewModel을 생성할 시 생성자가 필요한경우(파라미터)에  ViewModelFactory를 만들어준다.
+
+```kotlin
+class ScoreViewModelFactory(private val finalScore: Int) : ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(ScoreViewModel::class.java)) {
+            return ScoreViewModel(finalScore) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}
+```
+
+Factory에서 미리 정의를 해둔 후 ViewModel을 생성할때는 
+
+```kotlin
+viewModelFactory = ScoreViewModelFactory(scoreFragmentArgs.score)
+viewModel = ViewModelProviders.of(this, viewModelFactory)
+                .get(ScoreViewModel::class.java)
+```
+
+Factory객체를 만들고 ViewModelProviders의 of메소드에 객체를 추가해 준다.
+
+
+
+### Transformations.map
+
+- 라이브데이타를 다른형태의 라이브 데이터로 바꿔준다
+
+```kotlin
+val userLiveData: MutableLiveData<User> = repository.getUser(id)
+val userNameLiveData: LiveData<String> = Transformations.map(userLiveData) { user ->
+    user.firstName + " " + user.lastName
+}
+```
+
+userLiveData가 바뀔때마다 userNameLiveData 도 같이 바뀌게 된다.
+
+
