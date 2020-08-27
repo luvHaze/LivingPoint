@@ -511,5 +511,27 @@ userLiveData가 바뀔때마다 userNameLiveData 도 같이 바뀌게 된다.
   객체는 코루틴 동작을 제어하기 위한 객체
   ```
 
-  
+  # 2020. 08. 27
+
+### DiffUtil (RecyclerView)
+
+- RecyclerView Support Library의 유틸리티 클래스이다
+
+  목록(Item)간의 차이점을 찾고 업데이트 되어야할 목록을 반환해 준다.
+
+
+
+### ViewModel 그리고 AndroidViewModel
+
+```
+액티비티가 재생성 될 때, ViewModel은 액티비티 수명주기 외부에 존재하기 때문에
+UI 컨텍스트를 ViewModel에 저장한다면 메모리 릭을 발생시키는 직접적인 원인이 될 수 있다.
+다만 Application 컨택스트를 저장하는 것은 문제가 되지 않습니다. 
+Application 컨택스트는 전체 앱의 수명주기를 의미하기 때문에 
+메모리 릭에 영향을 주지 않으며 이런 용도를 위해 AndroidViewModel 클래스를 제공한다.
+```
+
+즉  그냥 ViewModel 는 Fragment나 Activity에 의존적인 뷰모델 객체이고
+
+AndroidViewModel은 Application의 Scope 를 따른다. 그래서 특정 액티비티나 프래그먼트가 Destroy 되더라도 어플리케이션이 종료되지 않는 이상 인스턴스가 유지된다.
 
