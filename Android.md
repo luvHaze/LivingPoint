@@ -535,3 +535,5 @@ Application 컨택스트는 전체 앱의 수명주기를 의미하기 때문에
 
 AndroidViewModel은 Application의 Scope 를 따른다. 그래서 특정 액티비티나 프래그먼트가 Destroy 되더라도 어플리케이션이 종료되지 않는 이상 인스턴스가 유지된다.
 
+// 출처 https://readystory.tistory.com/176
+
