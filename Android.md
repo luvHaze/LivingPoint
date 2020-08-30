@@ -537,3 +537,25 @@ AndroidViewModel은 Application의 Scope 를 따른다. 그래서 특정 액티�
 
 // 출처 https://readystory.tistory.com/176
 
+
+# 2020.08.30
+
+- ### getKnownLastLocation() 오류
+
+  공기계에서는 null값 AVD에서는 잘 받아오는 현상이 있어서 한창을 뒤지다가 찾아냈다
+
+  ```kotlin
+  locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+  ```
+
+  1. GPS가 작동하지 않고, WI-FI/Cell Tower(기지국)으로부터 위치정보를 얻지 못할 때
+  2. 가장 최근에 읽은 위치정보가 없을 때
+
+  ```kotlin
+  location = if(  locationManager?.getLastKnownLocation(LocationManager.GPS_PROVIDER) != 				null)
+              locationManager?.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+          else
+              locationManager?.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
+  ```
+
+   이 방법으로 GPS_PROVIDER로 값을 가져오지 못할때는 NETWORK_PROVIDER를 사용하는것으로 수정
