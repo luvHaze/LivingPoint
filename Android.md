@@ -559,3 +559,67 @@ AndroidViewModel은 Application의 Scope 를 따른다. 그래서 특정 액티�
   ```
 
    이 방법으로 GPS_PROVIDER로 값을 가져오지 못할때는 NETWORK_PROVIDER를 사용하는것으로 수정
+
+
+# 2020.09.08
+
+### Navigation
+
+1. 네비게이션을 gradle에 추가해준다.
+
+2. res에 navigation 메뉴를 추가하고 navGraph를 만들어준다.
+
+3. navigationGraph를 표현할 fragment에 아래와 같이 설정
+
+   ```xml
+   <fragment
+   android:id="@+id/myNavHostFragment"
+   android:name="androidx.navigation.fragment.NavHostFragment"
+   app:defaultNavHost="true"
+   app:navGraph="@navigation/navigation" />
+   ```
+
+4.  추가하면 해당 프래그먼트에는 네비게이션 그래프 그대로 화면에 표시가 된다.
+
+5. navGraph에 프래그먼트간을 이으면 action이 생기게 되는데 fragmentA to fragmentB 이런식으로
+
+6. 이 액션들을 아래와같이 실행시키면 프래그먼트간 이동이 가능하다.
+
+   ```kotlin
+   view.findNavController().navigate(R.id.action_gameWonFragment_to_gameFragment)
+   ```
+
+
+
+### Navigation BackStack
+
+ 1. 네비게이션의 액션을 선택(간선을 선택한다.)
+
+ 2. Pop Behavior에 보면 popUpTo와 popUpToInclusive 가 있는데
+
+    popUpTo는 어떤프래그먼트 위에 스택이 쌓일지를 뜻한다.
+
+	3. popUpToInclusive는 팝업이 되면 자기 자신은 스택에서 사라지게 할건지를 선택
+
+
+
+### Navigation with ActionBar
+
+- 네비게이션에 따라서 액션바의 버튼이 바뀌게 되는 기능
+
+  ```kotlin
+   val navController = this.findNavController(R.id.myNavHostFragment)
+  NavigationUI.setupActionBarWithNavController(this, navController)
+  ```
+
+  백스택이 있는지 없는지를 판별
+
+  ```kotlin
+  override fun onSupportNavigateUp(): Boolean {
+          val navController = this.findNavController(R.id.myNavHostFragment)
+          return navController.navigateUp()
+      }
+  ```
+
+  
+
