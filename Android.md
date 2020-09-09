@@ -620,6 +620,62 @@ AndroidViewModel은 Application의 Scope 를 따른다. 그래서 특정 액티�
           return navController.navigateUp()
       }
   ```
+  
+  
+  
+  ### NavigationView & Drawer
+
+- 네비게이션뷰를 메뉴 버튼을 클릭했을때 출력하게끔 한다.
+
+  1. 레이아웃부분은 DrawerLayout으로 감싸준다.
+
+  2. 감싼 레이아웃부분 안에서 평상시 표시될부분과 메뉴를 클릭했을때 나타날 NavigationView로 나눠준다.
+
+  3. 드로어 레이아웃을 생성해주고 navigation controller를 만들어 연동되게끔 한다.
+
+     ```kotlin
+     drawerLayout = binding.drawerLayout
+     val navController = this.findNavController(R.id.myNavHostFragment)
+     NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+     ```
+
+  4. 앱 바 설정부분에 네비게이션 그래프와 드로어 레이아웃을 넣어준다.
+
+     ```kotlin
+     appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+     NavigationUI.setupWithNavController(binding.navView, navController)
+     ```
+
+  5. 뒤로 돌아가야 하는 부분이 있는지를 보고 없으면 메뉴를 출력
+
+     ```kotlin
+     override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return NavigationUI.navigateUp(drawerLayout, navController)
+     }
+     ```
+
+  6. NavigationView의 XML속성에는 반드시 아래와 같은 속성이 있어야 한다
+
+     ```xml
+     android:layout_gravity="start"
+     ```
+
+     이건 네비게이션뷰가 어떤 방향으로 나오는지를 설정하기 위함이다.
+
+  7. NavigationView를 사용할때는 다른 프레그먼트에서는 끌었을때 나오지 않게 처리해야한다.
+
+     ```kotlin
+     navController.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, bundle: Bundle? ->
+                 if (nd.id == nc.graph.startDestination) {
+                     drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+                 } else {
+                     drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+                 }
+             }
+     ```
+
+     
 
   
 
