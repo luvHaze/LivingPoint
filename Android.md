@@ -677,5 +677,23 @@ AndroidViewModel은 Application의 Scope 를 따른다. 그래서 특정 액티�
 
      
 
+  # 2020.09.10
+
+### colorControlHighlgiht
+
+- 스타일에서 색깔을 설정하고 해당 버튼의 배경에 설정하면 클릭 시 효과가 나타남
+
+  ```xml
+  // 스타일 부분에서 색상을 설정해준다.
+  <item name="colorControlHighlight">@color/colorLightYellow</item>
+  ```
+
+  ```xml
+  // 효과를 주고자 할 뷰에 가서 속성을 아래와 같이 지정한다.
+  android:background="?attr/selectableItemBackground"
+  ```
+
   
+
+
 
