@@ -693,6 +693,26 @@ AndroidViewModel은 Application의 Scope 를 따른다. 그래서 특정 액티�
   android:background="?attr/selectableItemBackground"
   ```
 
+
+# 2020.09.11
+
+### ownerActivity
+
+- 다이얼로그쪽에 액티비티가 필요할때가 있을때 ownerActivity를 사용하면 되는데
+
+  그냥 ownerActivity를 사용하게 되면 null값을 반환한다.
+
+  그래서 아래와같이 먼저 설정해줘야한다.
+
+  ```kotlin
+  if (context is Activity) {			// context가 Activity타입인지를 먼저 확인 (instanceOf)
+          setOwnerActivity(context)  // context는 다이얼로그 만들때 받는 파라미터
+  				}
+  ```
+
+  
+
+  
   
 
 
